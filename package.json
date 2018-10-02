@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bootstrap": "3",
+    "dom-helpers": "^3.3.1",
+    "react-bootstrap": "^0.32.4"
+  }
+}

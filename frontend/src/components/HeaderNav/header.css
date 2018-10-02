@@ -1,0 +1,55 @@
+.container {
+    position: relative;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+}
+
+.container .one-third.column {
+    width: 300px;
+}
+
+.container .column, .columns, .container .columns {
+    float: left;
+    display: inline;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container .two-thirds.column {
+    width: 620px;
+}
+
+
+.logo {
+    margin: 10px 0 20px 0;
+}
+
+.logo h1 {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #f2f2f1;
+    position: relative;
+}
+
+nav#mainNav {
+    float: right;
+    margin-top: 2px;
+}
+
+nav#mainNav li {
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+nav#mainNav li a {
+    color: #f2f2f1;
+    display: block;
+    padding: 20px 15px;
+    position: relative;
+}

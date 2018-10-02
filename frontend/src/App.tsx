@@ -1,8 +1,11 @@
-import axios from 'axios';
 import * as React from 'react';
-import './App.css';
 
-import logo from './logo.svg';
+import axios from 'axios';
+import { Carousel } from 'react-bootstrap';
+import Header from './components/HeaderNav';
+
+import './App.css';
+import IMG from './carousel.png'
 
 interface IState {
   content: string;
@@ -35,12 +38,34 @@ class App extends React.Component<{}, IState> {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <Header />
         </header>
-        <p className="App-intro">
+        <div className="App-main">
+        <Carousel>
+  <Carousel.Item>
+    <img width={900} height={500} alt="900x500" src={IMG} />
+    <Carousel.Caption>
+      <h3>First slide label</h3>
+      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img width={900} height={500} alt="900x500" src={IMG} />
+    <Carousel.Caption>
+      <h3>Second slide label</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img width={900} height={500} alt="900x500" src={IMG} />
+    <Carousel.Caption>
+      <h3>Third slide label</h3>
+      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    </Carousel.Caption>
+  </Carousel.Item>
+</Carousel>;
           {this.state.content}
-        </p>
+        </div>
       </div>
     );
   }
