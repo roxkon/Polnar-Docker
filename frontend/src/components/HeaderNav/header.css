@@ -96,4 +96,7 @@ nav#mainNav li a {
 	top:1px;
 }
 
-       
+.custom-dialog{
+	width:450px !important; top:40px;
+}
+

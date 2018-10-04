@@ -1,7 +1,6 @@
 import * as React from 'react';
-
 import {  Button, Modal } from 'react-bootstrap';
-
+import SignupForm from './SignupForm';
 
 interface IProps  {
     onHide: (() => void);  
@@ -18,24 +17,15 @@ super(props);
       return (
         <Modal
           {...this.props}
-          bsSize="small"
+          bsSize="medium"
+          dialogClassName='custom-dialog'
           aria-labelledby="contained-modal-title-sm"
         >
           <Modal.Header closeButton={true}>
-            <Modal.Title id="contained-modal-title-sm">Modal heading</Modal.Title>
+            <Modal.Title id="contained-modal-title-sm">Rejestracja</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Wrapped Text</h4>
-            <p>
-              Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-              dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-              ac consectetur ac, vestibulum at eros.
-            </p>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-              Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-              auctor.
-            </p>
+          <SignupForm />
             
           </Modal.Body>
           <Modal.Footer>

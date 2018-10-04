@@ -1,6 +1,8 @@
 import * as React from 'react';
 
 import { Button, Modal } from 'react-bootstrap';
+import LoginForm from './LoginForm';
+
 
 
 interface IProps {
@@ -19,32 +21,22 @@ class LogInModal extends React.Component<IProps, {}, any> {
       <Modal
         {...this.props}
         bsSize="small"
+        dialogClassName='custom-dialog'
         aria-labelledby="contained-modal-title-sm"
       >
         <Modal.Header closeButton={true}>
-          <Modal.Title id="contained-modal-title-sm">Modal heading</Modal.Title>
+          <Modal.Title id="contained-modal-title-sm">logowanie</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Wrapped Text</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-            </p>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-            </p>
-
+<LoginForm />
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.props.onHide}>Close</Button>
-        </Modal.Footer>
+            <Modal.Footer>
+              <Button onClick={this.props.onHide}>Close</Button>
+            </Modal.Footer>
       </Modal>
-    );
-  }
-
-}
-
+          );
+        }
+      
+      }
+      
 export default LogInModal;
