@@ -9,6 +9,7 @@ interface IProps  {
 
 }
 
+
 class SignUpModal extends React.Component<IProps, {}, any> {
 public constructor(props: IProps) {
 super(props);
@@ -17,7 +18,7 @@ super(props);
       return (
         <Modal
           {...this.props}
-          bsSize="medium"
+          bsSize="small"
           dialogClassName='custom-dialog'
           aria-labelledby="contained-modal-title-sm"
         >

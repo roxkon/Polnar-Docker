@@ -13,11 +13,12 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
-    "keyofStringsOnly": true
+    "keyofStringsOnly": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules",
@@ -27,5 +28,11 @@
     "webpack",
     "jest",
     "src/setupTests.ts"
-  ]
+  ],
+  "lib": [
+    "es5",
+    "dom",
+    "dom.iterable",
+    "es2015"
+]
 }

@@ -29,12 +29,12 @@ opacity: 0.9;
     `
 
 const Signin = styled.span`
-float: right;
-padding-top: 16px;
+  background-color: #f1f1f1;
+  text-align: center;
   }
   `
 
-const SignupForm = () => {
+const LogInModal = () => {
   return (
     <SignupContainer>
       <h1>Register</h1>
@@ -60,4 +60,4 @@ const SignupForm = () => {
   );
 }
 
-export default SignupForm;
+export default LogInModal;
