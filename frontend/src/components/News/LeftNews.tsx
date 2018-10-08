@@ -1,13 +1,9 @@
 import * as React from 'react';
-import { Media } from 'react-bootstrap';
 import styled from 'styled-components';
-
-import IMG from '../../logo.svg'
-
-
-
+import NewsItem from './NewsItem';
 
 interface ILocation {
+    id: number;
     href: string;
     title: string;
     avatar: string;
@@ -17,8 +13,9 @@ interface ILocation {
 
 interface IState {
     listData: ILocation[];
-
 }
+
+
 
 const Box = styled.div`
     border-bottom: 1px solid #ebedf0;
@@ -32,6 +29,10 @@ color: rgba(0, 0, 0, 0.65);
 padding-bottom: 14px;
 `
 
+const Media = styled.div`
+
+`
+
 
 
 class LeftNews extends React.Component<{}, IState>  {
@@ -40,30 +41,34 @@ class LeftNews extends React.Component<{}, IState>  {
         this.state = {
             listData: [
                 {
-                    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+                    id: 1,
+                    avatar: 'A.jpg',
                     content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-                    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+                    description: 'Ant Design, a design language for background applications',
                     href: 'http://ant.design',
                     title: `ant design part`,
                 },
                 {
-                    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+                    id: 2,
+                    avatar: 'B.jpg',
                     content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-                    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+                    description: 'Ant Design, a design language for background applications',
                     href: 'http://ant.design',
                     title: `ant design part`,
                 },
                 {
-                    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+                    id: 3,
+                    avatar: 'C.jpg',
                     content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-                    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+                    description: 'Ant Design, a design language for background applications',
                     href: 'http://ant.design',
                     title: `ant design part`,
                 },
                 {
-                    avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
+                    id: 4,
+                    avatar: 'A.jpg',
                     content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
-                    description: 'Ant Design, a design language for background applications, is refined by Ant UED Team.',
+                    description: 'Ant Design, a design language for background applications',
                     href: 'http://ant.design',
                     title: `ant design part`,
                 },
@@ -73,28 +78,18 @@ class LeftNews extends React.Component<{}, IState>  {
 
 
     public render() {
+
+
+        const listData = this.state.listData
         return (
             <Box>
                 <H2>Latest News</H2>
                 <Media>
-                    <Media.Left>
-                        <img width={64} height={64} src={IMG} alt="thumbnail" />
-                    </Media.Left>
-                    <Media.Body>
-                        <Media.Heading>Media Heading</Media.Heading>
-                        <p>
-                            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
-                            ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
-                            tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate
-                            fringilla. Donec lacinia congue felis in faucibus.
-      </p>
-                    </Media.Body>
+                        <NewsItem list={listData} />
                 </Media>
-            </Box>
+            </Box >
         )
     }
-
-
 }
 
 

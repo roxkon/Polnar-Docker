@@ -1,52 +1,18 @@
-import axios from 'axios';
 import * as React from 'react';
-
-import CarouselHeader from './components/CarouselHeader';
-import Header from './components/HeaderNav';
-import News from './components/News';
+import {Route, Switch} from 'react-router-dom';
+import Main from './containers/Main';
 
 import './App.css';
 
-
-interface IState {
-  content: string;
-}
-
-class App extends React.Component<{}, IState> {
-  public constructor(props: {}) {
-    super(props);
-    this.state = {
-      content: 'Waiting for a response from Rails...',
-    };
-  }
-
-  public async componentDidMount() {
-    const response = await axios.get('http://localhost:3001/greetings/hello', {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-    });
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        content: response.data.content,
-      }
-    })
-  }
-
+class App extends React.Component {
   public render() {
     return (
       <div className="App">
         <header className="App-header">
-          <Header />
-          <CarouselHeader />
-          <News />
+        <Switch>
+        <Route path="/" component={Main} />
+        </Switch>
         </header>
-        <div className="App-main">
-
-          {this.state.content}
-        </div>
       </div>
     );
   }

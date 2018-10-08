@@ -1,13 +1,26 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import NewsItemRight from './NewsItemRight';
 import Tab from './Tab';
-import  TabContainer  from './TabContainer';
+import TabContainer from './TabContainer';
+
 
 
 
 interface IState {
     index: number
+    listData: ILocation[];
 }
+
+interface ILocation {
+    id: number;
+    href: string;
+    title: string;
+    avatar: string;
+    description: string;
+    content: string;
+};
+
 
 const RightBox = styled.div`
     border-bottom: 1px solid #ebedf0;
@@ -15,37 +28,66 @@ const RightBox = styled.div`
     color: rgba(0,0,0,0.65);
 `
 
+
 const H2 = styled.h2`
       border-bottom: 1px solid #d3d6da;
       color: rgba(0, 0, 0, 0.65);
       padding-bottom: 14px;
-`    
+`
 
 class RightTabs extends React.Component<{}, IState> {
     public constructor(props: {}) {
         super(props);
         this.state = {
-        index: 0
-        };
-      }
+            index: 0,
+            listData: [
+                {
+                    id: 1,
+                    avatar: 'A.jpg',
+                    content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+                    description: 'Ant Design, a design language for background applications',
+                    href: 'http://ant.design',
+                    title: `ant design part`,
+                },
+                {
+                    id: 2,
+                    avatar: 'B.jpg',
+                    content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+                    description: 'Ant Design, a design language for background applications',
+                    href: 'http://ant.design',
+                    title: `ant design part`,
+                },
+                {
+                    id: 3,
+                    avatar: 'C.jpg',
+                    content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+                    description: 'Ant Design, a design language for background applications',
+                    href: 'http://ant.design',
+                    title: `ant design part`,
+                },
+                {
+                    id: 4,
+                    avatar: 'A.jpg',
+                    content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+                    description: 'Ant Design, a design language for background applications',
+                    href: 'http://ant.design',
+                    title: `ant design part`,
+                },
+            ],
+        }
+    }
 
- 
- 
-   public render() {
-        const { index } = this.state;
+
+
+    public render() {
+        const { index, listData } = this.state;
         return (
             <RightBox>
-                <H2>Top ❤️ News</H2>
+                <H2>Most Read Articles</H2>
                 <TabContainer index={index} updateIndex={this.updateIndex}>
                     <Tab title="First">
                         <p>
-                            Irure eiusmod minim esse ipsum ullamco in dolore in.
-                            Tempor adipisicing proident in laboris est nulla magna.
-                            In aliquip non magna qui officia non nostrud culpa.
-                            Exercitation eiusmod laboris nulla cillum nisi.
-                            Veniam dolore in nulla commodo proident nisi aliqua sunt.
-                            Minim quis ullamco mollit ullamco adipisicing pariatur
-                            culpa ad dolore aliqua ea.
+                     <NewsItemRight  list={listData}/>
               </p>
                     </Tab>
                     <Tab title="Second">
@@ -69,7 +111,7 @@ class RightTabs extends React.Component<{}, IState> {
         );
     }
 
-   private updateIndex = (index: any) => {
+    private updateIndex = (index: any) => {
         this.setState({ index });
     }
 }
