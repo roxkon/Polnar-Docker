@@ -1,13 +1,18 @@
 import axios from 'axios';
 import * as React from 'react';
 
+import Assumptions from '../../components/Assumptions';
 import CarouselHeader from '../../components/CarouselHeader';
 import Footer from '../../components/Footer';
+import Goals from '../../components/Goals';
 import Header from '../../components/HeaderNav';
 import News from '../../components/News';
-
+import Professionalism from '../../components/Professionalism';
 
 import './App.css';
+
+
+
 
 
 interface IState {
@@ -44,6 +49,9 @@ class Main extends React.Component<{}, IState> {
           <Header />
           <CarouselHeader />
           <News />
+          <Goals />
+          <Assumptions />
+          <Professionalism />
           <Footer />
         </header>
         <div className="App-main">

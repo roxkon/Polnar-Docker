@@ -24,8 +24,9 @@ interface ILocation {
 
 const RightBox = styled.div`
     border-bottom: 1px solid #ebedf0;
-    padding: 42px 24px 50px;
+    padding: 0px 10px 50px;
     color: rgba(0,0,0,0.65);
+    margin-top:70px;
 `
 
 
@@ -73,6 +74,38 @@ class RightTabs extends React.Component<{}, IState> {
                     href: 'http://ant.design',
                     title: `ant design part`,
                 },
+                {
+                    id: 5,
+                    avatar: 'B.jpg',
+                    content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+                    description: 'Ant Design, a design language for background applications',
+                    href: 'http://ant.design',
+                    title: `ant design part`,
+                },
+                {
+                    id: 6,
+                    avatar: 'C.jpg',
+                    content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+                    description: 'Ant Design, a design language for background applications',
+                    href: 'http://ant.design',
+                    title: `ant design part`,
+                },
+                {
+                    id: 7,
+                    avatar: 'A.jpg',
+                    content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+                    description: 'Ant Design, a design language for background applications',
+                    href: 'http://ant.design',
+                    title: `ant design part`,
+                },
+                {
+                    id: 8,
+                    avatar: 'B.jpg',
+                    content: 'We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.',
+                    description: 'Ant Design, a design language for background applications',
+                    href: 'http://ant.design',
+                    title: `ant design part`,
+                },
             ],
         }
     }
@@ -83,7 +116,7 @@ class RightTabs extends React.Component<{}, IState> {
         const { index, listData } = this.state;
         return (
             <RightBox>
-                <H2>Most Read Articles</H2>
+                <H2>Popularne publikacje</H2>
                 <TabContainer index={index} updateIndex={this.updateIndex}>
                     <Tab title="First">
                         <p>

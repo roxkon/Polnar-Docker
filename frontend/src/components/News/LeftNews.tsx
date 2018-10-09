@@ -19,7 +19,8 @@ interface IState {
 
 const Box = styled.div`
     border-bottom: 1px solid #ebedf0;
-    padding: 42px 24px 50px;
+    padding-bottom: 60px;
+    margin-top: 70px;
     color: rgba(0, 0, 0, 0.65);
 `
 
@@ -83,7 +84,7 @@ class LeftNews extends React.Component<{}, IState>  {
         const listData = this.state.listData
         return (
             <Box>
-                <H2>Latest News</H2>
+                <H2>Ostatnie publikacje</H2>
                 <Media>
                         <NewsItem list={listData} />
                 </Media>
