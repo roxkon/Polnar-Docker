@@ -3,6 +3,8 @@ import * as React from 'react';
 
 import Assumptions from '../../components/Assumptions';
 import CarouselHeader from '../../components/CarouselHeader';
+import CarouselPartners from '../../components/CarouselPartners';
+import Evidence from '../../components/Evidence';
 import Footer from '../../components/Footer';
 import Goals from '../../components/Goals';
 import Header from '../../components/HeaderNav';
@@ -10,6 +12,8 @@ import News from '../../components/News';
 import Professionalism from '../../components/Professionalism';
 
 import './App.css';
+
+
 
 
 
@@ -47,15 +51,17 @@ class Main extends React.Component<{}, IState> {
       <div className="App">
         <header className="App-header">
           <Header />
-          <CarouselHeader />
-          <News />
+      
+        </header>
+        <div className="App-main">
+        <CarouselHeader />
+        <News />
           <Goals />
           <Assumptions />
           <Professionalism />
+          <Evidence />
+          <CarouselPartners />
           <Footer />
-        </header>
-        <div className="App-main">
-
           {this.state.content}
         </div>
       </div>

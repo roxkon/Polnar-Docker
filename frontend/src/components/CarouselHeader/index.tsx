@@ -1,13 +1,19 @@
 import * as React from 'react';
 import { Carousel } from 'react-bootstrap';
+import styled from 'styled-components';
 import IMG from './banner.jpg'
 
+
+
+const Wrapper = styled(Carousel)`
+width: 100% !important;
+`
 
 class CarouselHeader extends React.Component {
 
     public render() {
         return(
-            <Carousel>
+            <Wrapper>
 <Carousel.Item>
   <img width={"100%"} alt="900x500" src={IMG} />
   <Carousel.Caption>
@@ -29,7 +35,7 @@ class CarouselHeader extends React.Component {
     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
   </Carousel.Caption>
 </Carousel.Item>
-</Carousel>
+</Wrapper>
         );
     }
 
