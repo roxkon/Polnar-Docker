@@ -1,6 +1,12 @@
 import * as React from 'react';
+import { Pagination } from 'react-bootstrap';
 import styled from 'styled-components';
 import NewsItem from './NewsItem';
+
+
+
+
+
 
 interface ILocation {
     id: number;
@@ -19,7 +25,8 @@ interface IState {
 
 const Box = styled.div`
     border-bottom: 1px solid #ebedf0;
-    padding: 42px 24px 50px;
+    padding-bottom: 60px;
+    margin-top: 70px;
     color: rgba(0, 0, 0, 0.65);
 `
 
@@ -33,7 +40,9 @@ const Media = styled.div`
 
 `
 
-
+const Item = styled(Pagination.Item)`
+border-radius: 20px
+`
 
 class LeftNews extends React.Component<{}, IState>  {
     public constructor(props: {}) {
@@ -83,10 +92,27 @@ class LeftNews extends React.Component<{}, IState>  {
         const listData = this.state.listData
         return (
             <Box>
-                <H2>Latest News</H2>
+                <H2>Ostatnie publikacje</H2>
                 <Media>
                         <NewsItem list={listData} />
                 </Media>
+                <Pagination>
+  <Pagination.First />
+  <Pagination.Prev />
+  <Item>{1}</Item>
+  <Pagination.Ellipsis />
+
+  <Item>{10}</Item>
+  <Item>{11}</Item>
+  <Item active={true}>{12}</Item>
+  <Item>{13}</Item>
+  <Item disabled={true}>{14}</Item>
+
+  <Pagination.Ellipsis />
+  <Item>{20}</Item>
+  <Pagination.Next />
+  <Pagination.Last />
+</Pagination>;
             </Box >
         )
     }

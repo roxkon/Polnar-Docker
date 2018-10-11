@@ -12,8 +12,8 @@ height: 100px;
 `
 
 const Title = styled.p`
-font-size: 10px;
-font-weight: 400;
+font-size: 14px;
+font-weight: 600;
 `
 
 const StyledIMG = styled.div`
@@ -41,6 +41,12 @@ const NewsItemRight = (props: IProps) => {
                 </StyledIMG>
                 <MediaStyled key={item.id}>{item.title}</MediaStyled>
                 <Title>{item.description}</Title>
+                <h6>
+                    <em>By  </em>
+                    <a href="/authors/jordana-cepelewicz/" data-reactid="405">
+                        <span>Jordana Cepelewicz</span>
+                    </a>
+                </h6>
             </Box>
         ))
     )

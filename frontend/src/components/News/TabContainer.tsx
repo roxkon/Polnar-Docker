@@ -41,6 +41,7 @@ class TabContainer extends React.Component<IPropsContainer, {}> {
                 className="b bn bg-transparent pointer pa0 dim"
                 key={i}
                 onClick={onClick}
+                style={{'display': 'none'}}
             >
                 <div className={c}>
                     {t.props.title}
